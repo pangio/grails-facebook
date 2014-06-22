@@ -21,33 +21,33 @@ class BootStrap {
         String password = springSecurityService.encodePassword('pass')
 
         def user = new Person(
-                avatarUrl: 'https://avatars2.githubusercontent.com/u/15482',
-                username: 'jeff',
-                realName: 'Jeff Brown',
+                avatarUrl: 'rocky.jpg',
+                username: 'rocky',
+                realName: 'Rocky Balboa',
                 password: password,
                 enabled: true).save()
         PersonAuthority.create user, userRole, true
 
         user = new Person(
-                avatarUrl: 'https://avatars3.githubusercontent.com/u/66626',
-                username: 'graeme',
-                realName: 'Graeme Rocher',
+                avatarUrl: 'ali.jpg',
+                username: 'ali',
+                realName: 'Mohamed Ali',
                 password: password,
                 enabled: true).save()
         PersonAuthority.create user, userRole, true
 
         user = new Person(
-                avatarUrl: 'https://avatars0.githubusercontent.com/u/67817',
-                username: 'burt',
-                realName: 'Burt Beckwith',
+                avatarUrl: 'tyson.jpeg',
+                username: 'tyson',
+                realName: 'Mike Tyson',
                 password: password,
                 enabled: true).save()
         PersonAuthority.create user, userRole, true
 
         user = new Person(
-                avatarUrl: 'https://avatars2.githubusercontent.com/u/19075',
-                username: 'peter',
-                realName: 'Peter Ledbrook',
+                avatarUrl: 'chuck.jpg',
+                username: 'chuck',
+                realName: 'Chuck Norris',
                 password: password,
                 enabled: true).save()
         PersonAuthority.create user, userRole, true
@@ -55,18 +55,18 @@ class BootStrap {
     }
 
     private createFriendRequests() {
-        def userJeff = Person.findByUsername("jeff")
-        def userBurt = Person.findByUsername("burt")
-        def userGraeme = Person.findByUsername("graeme")
+        def userTyson = Person.findByUsername("tyson")
+        def userRocky = Person.findByUsername("rocky")
+        def userChuck = Person.findByUsername("chuck")
 
         new FriendRequest(
-                from: userBurt,
-                to: userJeff
+                from: userRocky,
+                to: userTyson
         ).save(failOnError: true)
 
         new FriendRequest(
-                from: userGraeme,
-                to: userJeff
+                from: userChuck,
+                to: userTyson
         ).save(failOnError: true)
 
     }

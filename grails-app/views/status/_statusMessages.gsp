@@ -1,5 +1,5 @@
 <div class="statusMessage" id="message_${messageCounter}">
-    <img height="40"  width="40" src="${resource(dir: 'images/avatars', file: "${statusMessage.author.avatar}")}" /> <strong><span class="author">${statusMessage.author.realName}</span> <g:message code="status.said.label" /></strong>
+    <img height="40"  width="40" src="${resource(dir: 'images/avatars', file: "${statusMessage.author.avatarUrl}")}" /> <strong><span class="author">${statusMessage.author.realName}</span> <g:message code="status.said.label" /></strong>
     <span class="statusMessage">${statusMessage.message}</span><br/>
     <div class="statusMessageTime">
         <prettytime:display class="statusMessageTime" date="${statusMessage.dateCreated}" />
